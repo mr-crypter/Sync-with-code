@@ -14,7 +14,12 @@ const port = process.env.PORT || 4000;
 
 app.use(express.json())
 
-app.use(cors())
+//app.use(cors())
+app.use(cors({
+  origin: 'https://sync-with-code.vercel.app', // Replace with your actual Vercel domain
+  methods: ['GET', 'POST'],
+  credentials: true,
+}));
 
 app.use(express.static(path.join(__dirname, "public"))) // Serve static files
 
