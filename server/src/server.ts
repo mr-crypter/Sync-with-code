@@ -19,6 +19,8 @@ const server = http.createServer(app)
 const io = new Server(server, {
 	cors: {
 		origin: "https://sync-with-code.vercel.app",
+		methods: ["GET", "POST"],
+    	credentials: true,
 	},
 	maxHttpBufferSize: 1e8,
 	pingTimeout: 60000,
