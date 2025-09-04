@@ -43,7 +43,7 @@ const SocketProvider = ({ children }: { children: ReactNode }) => {
             io(BACKEND_URL, {
                 reconnectionAttempts: 2,
             }),
-        [BACKEND_URL],
+        [],
     )
 
     const handleError = useCallback(
