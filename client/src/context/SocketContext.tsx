@@ -40,7 +40,7 @@ const SocketProvider = ({ children }: { children: ReactNode }) => {
     } = useAppContext()
     const socket: Socket = useMemo(
         () =>
-            io(BACKEND_URL, {
+            io(BACKEND_URL as string, {
                 reconnectionAttempts: 2,
             }),
         [],
